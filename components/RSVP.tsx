@@ -99,7 +99,7 @@ export default function RSVP() {
               required
               value={formData.nombre}
               onChange={(e) =>
-                setFormData((prev) => ({ ...prev, name: e.target.value }))
+                setFormData((prev) => ({ ...prev, nombre: e.target.value }))
               }
               className="w-full p-3 bg-black border border-white/50 rounded text-white focus:border-blood-red focus:outline-none focus:ring-2 focus:ring-blood-red/20"
               placeholder="Ingresa tu nombre"
@@ -112,7 +112,7 @@ export default function RSVP() {
               name="asistencia"
               value={formData.asistencia}
               onChange={(e) =>
-                setFormData((prev) => ({ ...prev, attendance: e.target.value }))
+                setFormData((prev) => ({ ...prev, asistencia: e.target.value }))
               }
               className="w-full p-3 bg-black border border-white/50 rounded text-white focus:border-blood-red focus:outline-none focus:ring-2 focus:ring-blood-red/20"
             >
@@ -129,7 +129,7 @@ export default function RSVP() {
               name="numero_de_invitadxs"
               value={formData.numero_de_invitadxs}
               onChange={(e) =>
-                setFormData((prev) => ({ ...prev, guests: e.target.value }))
+                setFormData((prev) => ({ ...prev, numero_de_invitadxs: e.target.value }))
               }
               className="w-full p-3 bg-black border border-white/50 rounded text-white focus:border-blood-red focus:outline-none focus:ring-2 focus:ring-blood-red/20"
             >
