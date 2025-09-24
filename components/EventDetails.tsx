@@ -41,7 +41,7 @@ export default function EventDetails() {
           </div>
           <div>
             <h4 className="font-sans font-semibold text-white text-lg">Hora</h4>
-            <p className="text-gray-300">8:00 PM - Hasta el Amanecer</p>
+            <p className="text-gray-300">6:00 PM - Hasta el Amanecer</p>
           </div>
         </div>
 
