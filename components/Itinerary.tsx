@@ -43,13 +43,13 @@ export default function Itinerary() {
               </div>
 
               <div className="space-y-4">
-                <h3 className="text-4xl font-bold text-blood-red font-gothic">Próximamente...</h3>
+                <h3 className="text-4xl text-blood-red font-gothic">Próximamente...</h3>
                 <p className="text-gray-300 text-lg max-w-md">
                   Los secretos de la noche están por revelarse.
                 </p>
 
                 <div className="bg-gray-800 rounded-lg p-6 border border-gray-700">
-                  <h3 className="text-blood-red text-2xl font-semibold mb-3 font-gothic">Qué Esperar:</h3>
+                  <h3 className="text-blood-red text-3xl mb-3 font-gothic tracking-wider">Qué Esperar:</h3>
                   <div className="space-y-2 text-gray-300">
                     <div className="flex items-center">
                       <Wine className="w-4 h-4 mr-3 text-blood-red" />
