@@ -14,12 +14,20 @@ interface ModalProps {
 export default function Modal({ isOpen, onClose, title, children }: ModalProps) {
   const modalRef = useRef<HTMLDivElement>(null)
   const triggerRef = useRef<HTMLElement | null>(null)
+  const hasOpenedRef = useRef(false) // NEW: track if modal just opened
 
   useEffect(() => {
-    if (isOpen) {
+    if (!isOpen) {
+      hasOpenedRef.current = false
+      return
+    }
+
+    if (!hasOpenedRef.current) {
+      hasOpenedRef.current = true
+
       triggerRef.current = document.activeElement as HTMLElement
 
-      // Focus the first focusable element when modal opens
+      // Focus the first focusable element only once
       const firstFocusable = modalRef.current?.querySelector(
         'input, select, button, textarea, [tabindex]:not([tabindex="-1"])',
       ) as HTMLElement
