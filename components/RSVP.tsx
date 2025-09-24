@@ -13,7 +13,7 @@ export default function RSVP() {
   })
   const [isSubmitting, setIsSubmitting] = useState(false)
 
-  const handleSubmit = async (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()
     setIsSubmitting(true)
 
@@ -30,15 +30,19 @@ export default function RSVP() {
       })
 
       if (response.ok) {
-        alert("¡Gracias por tu confirmación! Te hemos enviado un email de confirmación.")
+        alert(
+          "¡Gracias por confirmar tu asistencia! Nos vemos pronto 😁"
+        )
         setShowModal(false)
         setFormData({ name: "", attendance: "yes", guests: "1" })
       } else {
-        throw new Error("Form submission failed")
+        throw new Error("El envío del formulario ha fallado, reinicia la página y vuelve a intentar.")
       }
     } catch (error) {
-      console.error("Error sending form:", error)
-      alert("Hubo un error al enviar tu confirmación. Por favor intenta de nuevo.")
+      console.error("Error al enviar el formulario:", error)
+      alert(
+        "Hubo un error al enviar tu asistencia. Por favor intenta de nuevo."
+      )
     } finally {
       setIsSubmitting(false)
     }
@@ -48,7 +52,9 @@ export default function RSVP() {
     <>
       <div className="text-center">
         <div className="bg-blood-red p-6 rounded-lg mb-8 inline-block blood-drip relative">
-          <h3 className="font-gothic text-3xl md:text-4xl text-white">Únete al Aquelarre</h3>
+          <h3 className="font-gothic text-3xl md:text-4xl text-white">
+            Únete al Aquelarre
+          </h3>
           <div className="blood-drop-1"></div>
           <div className="blood-drop-2"></div>
           <div className="blood-drop-3"></div>
@@ -61,7 +67,10 @@ export default function RSVP() {
           vampírica.
         </p>
 
-        <button onClick={() => setShowModal(true)} className="vampire-button text-xl px-12 py-4">
+        <button
+          onClick={() => setShowModal(true)}
+          className="vampire-button text-xl px-12 py-4"
+        >
           🩸 Confirmar Asistencia
         </button>
       </div>
@@ -89,7 +98,9 @@ export default function RSVP() {
               name="name"
               required
               value={formData.name}
-              onChange={(e) => setFormData({ ...formData, name: e.target.value })}
+              onChange={(e) =>
+                setFormData(prev => ({ ...prev, name: e.target.value }))
+              }
               className="w-full p-3 bg-black border border-white/50 rounded text-white focus:border-blood-red focus:outline-none focus:ring-2 focus:ring-blood-red/20"
               placeholder="Ingresa tu nombre"
             />
@@ -100,7 +111,9 @@ export default function RSVP() {
             <select
               name="attendance"
               value={formData.attendance}
-              onChange={(e) => setFormData({ ...formData, attendance: e.target.value })}
+              onChange={(e) =>
+                setFormData(prev => ({ ...prev, attendance: e.target.value }))
+              }
               className="w-full p-3 bg-black border border-white/50 rounded text-white focus:border-blood-red focus:outline-none focus:ring-2 focus:ring-blood-red/20"
             >
               <option value="yes">¡Sí, ahí estaré! 🥳</option>
@@ -113,7 +126,9 @@ export default function RSVP() {
             <select
               name="guests"
               value={formData.guests}
-              onChange={(e) => setFormData({ ...formData, guests: e.target.value })}
+              onChange={(e) =>
+                setFormData(prev => ({ ...prev, guests: e.target.value }))
+              }
               className="w-full p-3 bg-black border border-white/50 rounded text-white focus:border-blood-red focus:outline-none focus:ring-2 focus:ring-blood-red/20"
             >
               {[1, 2].map((num) => (
