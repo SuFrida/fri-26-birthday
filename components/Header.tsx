@@ -10,8 +10,8 @@ export default function Header() {
           Birthday Halloween Party
         </h1>
         <h2 className="font-gothic text-3xl md:text-4xl text-white/90 mb-8 tracking-wide animate-fade-in-delay-1">26 Años de Fri</h2>
-        <p className="font-sans text-lg md:text-xl text-white/80 max-w-2xl mx-auto leading-relaxed font-light animate-fade-in-delay-2">
-          Adéntrate en una noche de vampiros. <br /> Disfrázate a tu estilo: de cualquier época, cultura, serie o película.
+        <p className="font-sans text-lg md:text-2xl text-white/80 max-w-3xl mx-auto leading-relaxed font-light animate-fade-in-delay-2">
+          Adéntrate en una noche de <p className="font-bold inline">vampiros.</p><br />Disfrázate a tu estilo: de cualquier época, cultura, serie o película.
         </p>
       </div>
       <div className="blood-drip-extra-1"></div>
