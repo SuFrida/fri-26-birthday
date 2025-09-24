@@ -79,7 +79,7 @@ export default function Modal({ isOpen, onClose, title, children }: ModalProps) 
     >
       <div
         ref={modalRef}
-        className="bg-gradient-to-br from-gray-900 to-black border border-blood-red/30 rounded-lg shadow-2xl relative
+        className="bg-gradient-to-br from-gray-900 to-black border border-blood-red/50 rounded-lg shadow-2xl relative
                    w-full h-full sm:w-11/12 sm:h-auto sm:max-w-2xl sm:max-h-[90vh] overflow-y-auto"
         onClick={(e) => e.stopPropagation()}
       >

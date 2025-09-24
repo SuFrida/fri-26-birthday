@@ -90,7 +90,7 @@ export default function RSVP() {
               required
               value={formData.name}
               onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-              className="w-full p-3 bg-black border border-blood-red/30 rounded text-white focus:border-blood-red focus:outline-none focus:ring-2 focus:ring-blood-red/20"
+              className="w-full p-3 bg-black border border-white/50 rounded text-white focus:border-blood-red focus:outline-none focus:ring-2 focus:ring-blood-red/20"
               placeholder="Ingresa tu nombre"
             />
           </div>
@@ -101,7 +101,7 @@ export default function RSVP() {
               name="attendance"
               value={formData.attendance}
               onChange={(e) => setFormData({ ...formData, attendance: e.target.value })}
-              className="w-full p-3 bg-black border border-blood-red/30 rounded text-white focus:border-blood-red focus:outline-none focus:ring-2 focus:ring-blood-red/20"
+              className="w-full p-3 bg-black border border-white/50 rounded text-white focus:border-blood-red focus:outline-none focus:ring-2 focus:ring-blood-red/20"
             >
               <option value="yes">¡Sí, ahí estaré! 🥳</option>
               <option value="no">No, no puedo asistir 🥺</option>
@@ -114,7 +114,7 @@ export default function RSVP() {
               name="guests"
               value={formData.guests}
               onChange={(e) => setFormData({ ...formData, guests: e.target.value })}
-              className="w-full p-3 bg-black border border-blood-red/30 rounded text-white focus:border-blood-red focus:outline-none focus:ring-2 focus:ring-blood-red/20"
+              className="w-full p-3 bg-black border border-white/50 rounded text-white focus:border-blood-red focus:outline-none focus:ring-2 focus:ring-blood-red/20"
             >
               {[1, 2].map((num) => (
                 <option key={num} value={num}>

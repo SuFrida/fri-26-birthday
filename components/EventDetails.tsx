@@ -11,7 +11,7 @@ export default function EventDetails() {
       <div className="grid md:grid-cols-2 gap-8">
         {/* Row 1 */}
         <div className="flex items-start space-x-4">
-          <div className="w-12 h-12 bg-blood-red rounded-full flex items-center justify-center">
+          <div className="w-12 h-12 bg-blood-red rounded-full flex items-center justify-center flex-shrink-0">
             <span className="text-white text-xl">📅</span>
           </div>
           <div>
@@ -21,7 +21,7 @@ export default function EventDetails() {
         </div>
 
         <div className="flex items-start space-x-4">
-          <div className="w-12 h-12 bg-blood-red rounded-full flex items-center justify-center">
+          <div className="w-12 h-12 bg-blood-red rounded-full flex items-center justify-center flex-shrink-0">
             <span className="text-white text-xl">📍</span>
           </div>
           <div>
@@ -36,7 +36,7 @@ export default function EventDetails() {
 
         {/* Row 2 */}
         <div className="flex items-start space-x-4">
-          <div className="w-12 h-12 bg-blood-red rounded-full flex items-center justify-center">
+          <div className="w-12 h-12 bg-blood-red rounded-full flex items-center justify-center flex-shrink-0">
             <span className="text-white text-xl">🕘</span>
           </div>
           <div>
@@ -46,7 +46,7 @@ export default function EventDetails() {
         </div>
 
         <div className="flex items-start space-x-4">
-          <div className="w-12 h-12 bg-blood-red rounded-full flex items-center justify-center">
+          <div className="w-12 h-12 bg-blood-red rounded-full flex items-center justify-center flex-shrink-0">
             <span className="text-white text-xl">🦇</span>
           </div>
           <div>
