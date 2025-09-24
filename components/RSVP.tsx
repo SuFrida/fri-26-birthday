@@ -6,9 +6,9 @@ import Modal from "./Modal"
 export default function RSVP() {
   const [showModal, setShowModal] = useState(false)
   const [formData, setFormData] = useState({
-    name: "",
-    attendance: "yes",
-    guests: "1",
+    nombre: "",
+    asistencia: "si",
+    numero_de_invitadxs: "1",
   })
   const [isSubmitting, setIsSubmitting] = useState(false)
 
@@ -28,17 +28,17 @@ export default function RSVP() {
 
       if (response.ok) {
         alert(
-          "¡Gracias por tu confirmación! Te hemos enviado un email de confirmación."
+          "¡Gracias por confirmar tu asistencia! Nos vemos pronto."
         )
         setShowModal(false)
-        setFormData({ name: "", attendance: "yes", guests: "1" })
+        setFormData({ nombre: "", asistencia: "yes", numero_de_invitadxs: "1" })
       } else {
         throw new Error("Form submission failed")
       }
     } catch (error) {
       console.error("Error sending form:", error)
       alert(
-        "Hubo un error al enviar tu confirmación. Por favor intenta de nuevo."
+        "Hubo un error al enviar tu asistencia. Por favor intenta de nuevo."
       )
     } finally {
       setIsSubmitting(false)
@@ -86,7 +86,7 @@ export default function RSVP() {
           <input
             type="hidden"
             name="_subject"
-            value={`Nueva Asistencia - ${formData.name || "Invitadx"} - Fiesta Fri`}
+            value={`Nueva Asistencia - ${formData.nombre || "Invitadx"} - Fiesta Fri`}
           />
           <input type="hidden" name="_captcha" value="false" />
           <input type="hidden" name="_template" value="table" />
@@ -95,9 +95,9 @@ export default function RSVP() {
             <label className="block font-sans text-white mb-2">Nombre</label>
             <input
               type="text"
-              name="name"
+              name="nombre"
               required
-              value={formData.name}
+              value={formData.nombre}
               onChange={(e) =>
                 setFormData((prev) => ({ ...prev, name: e.target.value }))
               }
@@ -109,14 +109,14 @@ export default function RSVP() {
           <div>
             <label className="block font-sans text-white mb-2">¿Asistirás?</label>
             <select
-              name="attendance"
-              value={formData.attendance}
+              name="asistencia"
+              value={formData.asistencia}
               onChange={(e) =>
                 setFormData((prev) => ({ ...prev, attendance: e.target.value }))
               }
               className="w-full p-3 bg-black border border-white/50 rounded text-white focus:border-blood-red focus:outline-none focus:ring-2 focus:ring-blood-red/20"
             >
-              <option value="yes">¡Sí, ahí estaré! 🥳</option>
+              <option value="si">¡Sí, ahí estaré! 🥳</option>
               <option value="no">No, no puedo asistir 🥺</option>
             </select>
           </div>
@@ -126,8 +126,8 @@ export default function RSVP() {
               Número de invitadxs (incluyéndote)
             </label>
             <select
-              name="guests"
-              value={formData.guests}
+              name="numero_de_invitadxs"
+              value={formData.numero_de_invitadxs}
               onChange={(e) =>
                 setFormData((prev) => ({ ...prev, guests: e.target.value }))
               }
