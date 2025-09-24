@@ -1,7 +1,6 @@
 "use client"
 
-import type React from "react"
-import { useState } from "react"
+import React, { useState } from "react"
 import Modal from "./Modal"
 
 export default function RSVP() {
@@ -24,24 +23,22 @@ export default function RSVP() {
       const response = await fetch(form.action, {
         method: "POST",
         body: formDataObj,
-        headers: {
-          Accept: "application/json",
-        },
+        headers: { Accept: "application/json" },
       })
 
       if (response.ok) {
         alert(
-          "¡Gracias por confirmar tu asistencia! Nos vemos pronto 😁"
+          "¡Gracias por tu confirmación! Te hemos enviado un email de confirmación."
         )
         setShowModal(false)
         setFormData({ name: "", attendance: "yes", guests: "1" })
       } else {
-        throw new Error("El envío del formulario ha fallado, reinicia la página y vuelve a intentar.")
+        throw new Error("Form submission failed")
       }
     } catch (error) {
-      console.error("Error al enviar el formulario:", error)
+      console.error("Error sending form:", error)
       alert(
-        "Hubo un error al enviar tu asistencia. Por favor intenta de nuevo."
+        "Hubo un error al enviar tu confirmación. Por favor intenta de nuevo."
       )
     } finally {
       setIsSubmitting(false)
@@ -63,8 +60,8 @@ export default function RSVP() {
         </div>
 
         <p className="font-sans text-gray-300 mb-8 max-w-2xl mx-auto leading-relaxed">
-          ¿Responderás al llamado de la noche? Confirma tu asistencia y conviértete en parte de nuestra reunión
-          vampírica.
+          ¿Responderás al llamado de la noche? Confirma tu asistencia y conviértete
+          en parte de nuestra reunión vampírica.
         </p>
 
         <button
@@ -75,14 +72,17 @@ export default function RSVP() {
         </button>
       </div>
 
-      <Modal isOpen={showModal} onClose={() => setShowModal(false)} title="Confirma tu Asistencia">
+      <Modal
+        isOpen={showModal}
+        onClose={() => setShowModal(false)}
+        title="Confirma tu Asistencia"
+      >
         <form
           onSubmit={handleSubmit}
           action="https://formsubmit.co/frianajuarezbonilla@gmail.com"
           method="POST"
           className="space-y-6"
         >
-          {/* Hidden fields for FormSubmit configuration */}
           <input
             type="hidden"
             name="_subject"
@@ -99,7 +99,7 @@ export default function RSVP() {
               required
               value={formData.name}
               onChange={(e) =>
-                setFormData(prev => ({ ...prev, name: e.target.value }))
+                setFormData((prev) => ({ ...prev, name: e.target.value }))
               }
               className="w-full p-3 bg-black border border-white/50 rounded text-white focus:border-blood-red focus:outline-none focus:ring-2 focus:ring-blood-red/20"
               placeholder="Ingresa tu nombre"
@@ -112,7 +112,7 @@ export default function RSVP() {
               name="attendance"
               value={formData.attendance}
               onChange={(e) =>
-                setFormData(prev => ({ ...prev, attendance: e.target.value }))
+                setFormData((prev) => ({ ...prev, attendance: e.target.value }))
               }
               className="w-full p-3 bg-black border border-white/50 rounded text-white focus:border-blood-red focus:outline-none focus:ring-2 focus:ring-blood-red/20"
             >
@@ -122,12 +122,14 @@ export default function RSVP() {
           </div>
 
           <div>
-            <label className="block font-sans text-white mb-2">Número de invitadxs (incluyéndote)</label>
+            <label className="block font-sans text-white mb-2">
+              Número de invitadxs (incluyéndote)
+            </label>
             <select
               name="guests"
               value={formData.guests}
               onChange={(e) =>
-                setFormData(prev => ({ ...prev, guests: e.target.value }))
+                setFormData((prev) => ({ ...prev, guests: e.target.value }))
               }
               className="w-full p-3 bg-black border border-white/50 rounded text-white focus:border-blood-red focus:outline-none focus:ring-2 focus:ring-blood-red/20"
             >
