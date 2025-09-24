@@ -58,7 +58,7 @@ export default function PageLoader({ onLoadComplete }: PageLoaderProps) {
         </div>
 
         <div className="bg-blood-red px-8 py-4 rounded-lg mb-6 inline-block">
-          <h2 className="font-gothic text-2xl md:text-3xl text-white tracking-wider">Awakening the Night...</h2>
+          <h2 className="font-gothic text-2xl md:text-3xl text-white tracking-wider">Estás invitadx al despertar de la noche...</h2>
         </div>
 
         <div className="w-64 h-2 bg-gray-800 rounded-full overflow-hidden mx-auto">

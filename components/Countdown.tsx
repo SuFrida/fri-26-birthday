@@ -4,14 +4,14 @@ import { useState, useEffect } from "react"
 
 export default function Countdown() {
   const [timeLeft, setTimeLeft] = useState({
-    days: 0,
-    hours: 0,
-    minutes: 0,
-    seconds: 0,
+    días: 0,
+    horas: 0,
+    minutos: 0,
+    segundos: 0,
   })
 
   useEffect(() => {
-    const targetDate = new Date("2024-10-26T20:00:00").getTime()
+    const targetDate = new Date("2025-10-25T20:00:00").getTime()
 
     const timer = setInterval(() => {
       const now = new Date().getTime()
@@ -19,10 +19,10 @@ export default function Countdown() {
 
       if (difference > 0) {
         setTimeLeft({
-          days: Math.floor(difference / (1000 * 60 * 60 * 24)),
-          hours: Math.floor((difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)),
-          minutes: Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60)),
-          seconds: Math.floor((difference % (1000 * 60)) / 1000),
+          días: Math.floor(difference / (1000 * 60 * 60 * 24)),
+          horas: Math.floor((difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)),
+          minutos: Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60)),
+          segundos: Math.floor((difference % (1000 * 60)) / 1000),
         })
       }
     }, 1000)
@@ -33,7 +33,7 @@ export default function Countdown() {
   return (
     <div className="text-center">
       <div className="bg-blood-red p-6 rounded-lg mb-8 inline-block blood-drip relative">
-        <h3 className="font-gothic text-3xl md:text-4xl text-white tracking-wider">Time Until the Darkness Falls</h3>
+        <h3 className="font-gothic text-3xl md:text-4xl text-white tracking-wider">Tiempo Hasta que Caiga la Noche</h3>
         <div className="blood-drip-extra-1"></div>
         <div className="blood-drip-extra-2"></div>
         <div className="blood-drip-extra-3"></div>

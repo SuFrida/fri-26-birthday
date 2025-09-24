@@ -7,6 +7,7 @@ import Map from "@/components/Map"
 import Playlist from "@/components/Playlist"
 import RSVP from "@/components/RSVP"
 import Countdown from "@/components/Countdown"
+import Itinerary from "@/components/Itinerary"
 import PageLoader from "@/components/PageLoader"
 
 export default function Home() {
@@ -36,6 +37,10 @@ export default function Home() {
 
           <section className="fade-in-section">
             <Countdown />
+          </section>
+
+          <section className="fade-in-section">
+            <Itinerary />
           </section>
 
           <section className="fade-in-section">
