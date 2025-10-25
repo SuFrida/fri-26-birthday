@@ -64,6 +64,8 @@ export default function MapPin({ locations = defaultLocations }: MapPinProps) {
 
     // Load Leaflet dynamically
     const loadLeaflet = async () => {
+      if (!mapRef.current) return
+
       const L = (await import("leaflet")).default
 
       // Add Leaflet CSS
@@ -84,7 +86,7 @@ export default function MapPin({ locations = defaultLocations }: MapPinProps) {
         mapInstanceRef.current.remove()
       }
 
-      const map = L.map(mapRef.current).setView([avgLat, avgLng], 13)
+      const map = L.map(mapRef.current!).setView([avgLat, avgLng], 13)
       mapInstanceRef.current = map
 
       // Add OpenStreetMap tiles
