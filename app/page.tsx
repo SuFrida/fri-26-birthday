@@ -9,6 +9,7 @@ import RSVP from "@/components/RSVP"
 import Countdown from "@/components/Countdown"
 import Itinerary from "@/components/Itinerary"
 import PageLoader from "@/components/PageLoader"
+import POVCamera from "@/components/POVCamera"
 
 export default function Home() {
   const [isLoading, setIsLoading] = useState(true)
@@ -49,6 +50,10 @@ export default function Home() {
 
           <section className="fade-in-section">
             <Playlist />
+          </section>
+
+           <section className="fade-in-section">
+            <POVCamera />
           </section>
 
           <section className="fade-in-section">
